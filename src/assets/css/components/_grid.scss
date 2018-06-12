@@ -12,7 +12,7 @@
 .grid-container {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: [col-start col] calc(100% / 12) [col] calc(100% / 12) [col] calc(100% / 12) [col] calc(100% / 12) [col] calc(100% / 12) [col] calc(100% / 12) [col] calc(100% / 12) [col] calc(100% / 12) [col] calc(100% / 12) [col] calc(100% / 12) [col] calc(100% / 12) [col] calc(100% / 12) [col col-end];
+    -ms-grid-columns: calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12);
     grid-template-columns: [col-start col] repeat(11, calc(100% / 12) [col]) calc(100% / 12) [col col-end];
     -ms-grid-rows: auto auto;
     grid-template-rows: auto;
@@ -23,11 +23,6 @@
 }
 
 .grid-container--main {
-    -ms-grid-columns: [content-start left-sidebar-start] calc((100% / 12) * 6) [left-sidebar-end main-content-start] auto [main-content-end right-sidebar-start] calc((100% / 12) * 6) [right-sidebar-end content-end];
-    grid-template-columns: [content-start left-sidebar-start] calc((100% / 12) * 6) [left-sidebar-end main-content-start] auto [main-content-end right-sidebar-start] calc((100% / 12) * 6) [right-sidebar-end content-end];
-
-    @include bp-md {
-        -ms-grid-columns: [content-start left-sidebar-start] 12rem [left-sidebar-end main-content-start] auto [main-content-end right-sidebar-start] 12rem [right-sidebar-end content-end];
-        grid-template-columns: [content-start left-sidebar-start] 12rem [left-sidebar-end main-content-start] auto [main-content-end right-sidebar-start] 12rem [right-sidebar-end content-end];
-    }
+    -ms-grid-columns: 12rem auto 12rem;
+    grid-template-columns: [content-start left-sidebar-start] 12rem [left-sidebar-end main-content-start] auto [main-content-end right-sidebar-start] 12rem [right-sidebar-end content-end];
 }

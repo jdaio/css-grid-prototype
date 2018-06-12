@@ -17,13 +17,19 @@
     grid-template-rows: auto;
     grid-auto-columns: 0rem;
     grid-auto-rows: auto;
+    -ms-grid-template-columns: [col-start col] repeat(11, calc(100% / 12) [col]) calc(100% / 12) [col col-end];
+    -ms-grid-template-rows: auto;
+    -ms-grid-auto-columns: 0rem;
+    -ms-grid-auto-rows: auto;
     position: relative;
 }
 
 .grid-container--main {
     grid-template-columns: [content-start left-sidebar-start] calc((100% / 12) * 6) [left-sidebar-end main-content-start] auto [main-content-end right-sidebar-start] calc((100% / 12) * 6) [right-sidebar-end content-end];
+    -ms-grid-template-columns: [content-start left-sidebar-start] calc((100% / 12) * 6) [left-sidebar-end main-content-start] auto [main-content-end right-sidebar-start] calc((100% / 12) * 6) [right-sidebar-end content-end];
 
     @include bp-md {
         grid-template-columns: [content-start left-sidebar-start] 12rem [left-sidebar-end main-content-start] auto [main-content-end right-sidebar-start] 12rem [right-sidebar-end content-end];
+        -ms-grid-template-columns: [content-start left-sidebar-start] 12rem [left-sidebar-end main-content-start] auto [main-content-end right-sidebar-start] 12rem [right-sidebar-end content-end];
     }
 }

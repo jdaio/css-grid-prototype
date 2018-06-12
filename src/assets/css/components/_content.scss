@@ -18,6 +18,8 @@
 .footer__inner {
     grid-column: col-start / col-end;
     grid-row: 1 / 2;
+    -ms-grid-column: col-start / col-end;
+    -ms-grid-row: 1 / 2;
 }
 
 
@@ -38,10 +40,13 @@
 .main {
     grid-column: content-start / content-end;
     grid-row: 1 / 2;
+    -ms-grid-column: content-start / content-end;
+    -ms-grid-row: 1 / 2;
 
     @include bp-md {
         height: 100%;
         grid-column: main-content-start / main-content-end;
+        -ms-grid-column: main-content-start / main-content-end;
     }
 }
 
@@ -57,6 +62,7 @@
 
     @include bp-md {
         grid-row: 1 / 2;
+        -ms-grid-row: 1 / 2;
     }
 }
 
@@ -65,6 +71,8 @@
 .sidebar--left {
     grid-column: left-sidebar-start / left-sidebar-end;
     grid-row: 1 / 3;
+    -ms-grid-column: left-sidebar-start / left-sidebar-end;
+    -ms-grid-row: 1 / 3;
 
     @include bp-md {
         // grid-column: col 1 / col 4;
@@ -76,9 +84,12 @@
 .sidebar--right {
     grid-column: content-start / content-end;
     grid-row: 2 / 3;
+    -ms-grid-column: content-start / content-end;
+    -ms-grid-row: 2 / 3;
 
     @include bp-md {
         grid-column: right-sidebar-start / right-sidebar-end;
+        -ms-grid-column: right-sidebar-start / right-sidebar-end;
     }
 }
 

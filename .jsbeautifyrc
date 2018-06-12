@@ -1,0 +1,16 @@
+{
+    "end_with_newline": true,
+    "indent_handlebars": true,
+    "indent_inner_html": true,
+    "newline_between_rules": true,
+    "space_after_anon_function": true,
+    "space_around_combinator": true,
+    "break_chained_methods": true,
+    "keep_array_indentation": true,
+    "space_in_paren": false,
+    "max_preserve_newlines": 2,
+    "preserve_newlines": true,
+    "selector_separator_newline": true,
+    "wrap_line_length": 80,
+    "brace_style": "collapse,preserve-inline"
+}

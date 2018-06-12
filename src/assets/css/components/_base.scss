@@ -1,0 +1,46 @@
+/*
+ * Base Component
+ *
+ * Contains all variables, functions, mixins, etc.
+ */
+
+/*------------------------------------*\
+    #VARIABLES
+\*------------------------------------*/
+
+/*-- Variables > Breakpoint Sizes --*/
+
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+
+/*------------------------------------*\
+    #MIXINS
+\*------------------------------------*/
+
+/*-- Mixins > Breakpoints --*/
+
+@mixin bp-sm {
+    @media only screen and (min-width: $bp-sm) {
+        @content;
+    }
+}
+
+@mixin bp-md {
+    @media only screen and (min-width: $bp-md) {
+        @content;
+    }
+}
+
+@mixin bp-lg {
+    @media only screen and (min-width: $bp-lg) {
+        @content;
+    }
+}
+
+@mixin bp-xl {
+    @media only screen and (min-width: $bp-xl) {
+        @content;
+    }
+}

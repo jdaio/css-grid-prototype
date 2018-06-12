@@ -1,0 +1,21 @@
+/*
+ * Grid Component
+ *
+ * Sets the layout for the grid container. Overall, this is similar to
+ * the 12 column grid used by Twitter Bootstrap.
+ */
+
+/*------------------------------------*\
+    #GRID
+\*------------------------------------*/
+
+.grid-container {
+    display: grid;
+    align-items: start;
+    align-content: start;
+    grid-template-columns: [col-start col] repeat(11, calc(100% / 12) [col]) calc(100% / 12) [col col-end];
+    grid-template-rows: auto;
+    grid-auto-columns: 0rem;
+    grid-auto-rows: auto;
+    position: relative;
+}

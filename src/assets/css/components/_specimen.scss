@@ -1,0 +1,251 @@
+/*
+ * Specimen Component
+ *
+ * Used to just style the project page for demo purposes. Not needed for
+ * actual use.
+ */
+
+/*------------------------------------*\
+    #IMPORT
+\*------------------------------------*/
+
+/*-- Import > Fonts --*/
+
+// Google Font: Montserrat Regular (400) & Bold (700)
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+
+/*------------------------------------*\
+    #VARIABLES
+\*------------------------------------*/
+
+/*-- Variables > Fonts --*/
+
+$font-family: 'Montserrat',
+Roboto,
+"Helvetica Neue",
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Arial,
+sans-serif;
+
+/*-- Variables > Colors --*/
+
+$color-primary: #22313F;
+$color-secondary: #22A7F0;
+$color-tertiary: #67809F;
+$color-light: #ECF0F1;
+$color-light-alt: #F2F1EF;
+
+
+/*------------------------------------*\
+    #BASE
+\*------------------------------------*/
+
+/*-- Base > Body Styling --*/
+
+body {
+    color: $color-primary;
+    font-family: $font-family;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    cursor: auto;
+}
+
+/*-- Base > Typography --*/
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    margin-bottom: .75rem;
+    font-weight: 700;
+    line-height: 1.75;
+    color: $color-tertiary;
+}
+
+h1 {
+    color: $color-primary;
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: $color-tertiary;
+    font-size: 2rem;
+}
+
+h3 {
+    color: lighten($color-tertiary, 15%);
+    font-size: 1.45rem;
+}
+
+p {
+    margin: 0 0 1.5rem;
+}
+
+a {
+    color: $color-secondary;
+    text-decoration: none;
+    border-bottom: .0625rem solid $color-secondary;
+    transition: all .3s;
+
+    &:hover,
+    &:focus {
+        color: lighten($color-secondary, 10%);
+        border-bottom-color: currentColor;
+    }
+}
+
+/*------------------------------------*\
+    #HEADER-AND-FOOTER
+\*------------------------------------*/
+
+.header,
+.footer {
+    padding: 1.5rem 1rem;
+    background: $color-primary;
+    color: $color-light;
+    text-align: center;
+}
+
+.header {
+    font-weight: 700;
+
+    h1 {
+        margin: 0 0 1rem;
+        color: $color-light;
+    }
+}
+
+.footer {
+    p {
+        margin: 0 auto;
+    }
+}
+
+
+/*------------------------------------*\
+    #MAIN-CONTENT
+\*------------------------------------*/
+
+.main {
+    padding: 1rem 1.5rem;
+}
+
+
+/*------------------------------------*\
+    #SIDEBARS
+\*------------------------------------*/
+
+.sidebar {
+    padding: 1rem 1.5rem;
+}
+
+/*-- Sidebars > Left Sidebar --*/
+
+.sidebar--left {
+    background: $color-light-alt;
+
+    nav {
+        margin: 0;
+        padding: 0;
+        display: block;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: block;
+                margin-bottom: 1.5rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+/*-- Sidebars > Right Sidebar --*/
+
+.sidebar--right {
+    background: $color-light;
+
+    img {
+        display: inline-block;
+        margin: 0 1.5rem 1.5rem 0;
+        max-width: calc(50% - 1rem);
+        width: calc(50% - 1rem);
+        height: auto;
+        padding: .25rem;
+        border: .0625rem solid lighten($color-primary, 50%);
+        border-radius: 1rem;
+
+        &:nth-of-type(even) {
+            margin-right: 0;
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        @include bp-md {
+            display: block;
+            margin: 0 auto 1rem;
+            max-width: 100%;
+            width: 100%;
+
+            &:nth-of-type(even) {
+                margin-right: auto;
+            }
+        }
+    }
+}
+
+/*-- Sidebars > Mobile Sidebar > Toggle --*/
+
+.sidebar--mobile-toggle {
+    margin: 0 auto;
+    padding: .25rem;
+    background: rgba($color-light, 0);
+    outline: none;
+    border: 0;
+    border-radius: .25rem;
+    color: $color-light;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+        background: rgba($color-light, .1);
+    }
+}
+
+.sidebar--mobile-toggle--active {
+    background: $color-secondary;
+
+    .sidebar--mobile-toggle__icon {
+        fill: $color-primary;
+    }
+
+    &:hover {
+        background: lighten($color-secondary, 10%);
+
+        .sidebar--mobile-toggle__icon {
+            fill: lighten($color-primary, 10%);
+        }
+    }
+}
+
+.sidebar--mobile-toggle__icon {
+    fill: $color-secondary;
+    transition: all .3s;
+
+    &:hover,
+    &:focus {
+        fill: lighten($color-secondary, 10%);
+    }
+}

@@ -1,0 +1,66 @@
+### Git Ignore ###
+##################
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+*.map
+
+# Logs and Databases #
+######################
+*.log
+*.sql
+
+# macOS / Windows Generated Files #
+######################
+**.DS_Store*
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+Icon?
+Thumbs.db
+._*
+ehthumbs.db
+Desktop.ini
+
+# Vim Generated Files #
+######################
+*.un~
+
+# SASS Generated Files #
+##########
+**/.sass-cache
+**/.sass-cache/*
+**/.map
+*.map
+
+# NPM #
+#######
+node_modules
+npm-debug.log
+
+# Compiled Files and Build Dirs #
+#################################
+build/**
+/README.html
+
+# IDEs & Editors #
+##################
+.idea
+.vscode
+library/vendors/composer
+assets/img/.DS_Store
+assets/sass/HTML
+assets/sass/Rails
+HTML
+Rails

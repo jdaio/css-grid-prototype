@@ -1,0 +1,38 @@
+{
+    "name": "CSS-Grid-Prototype",
+    "author": "Jamal Ali-Mohammed <jamal.ali.mohammed@gmail.com>",
+    "version": "1.0.0",
+    "description": "CSS grid prototype/boilerplate page for redditor u/carpii.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jdaio/css-grid-prototype"
+    },
+    "dependencies": {
+        "jquery": "^3.3.1"
+    },
+    "devDependencies": {
+        "gulp": "github:gulpjs/gulp#4.0",
+        "gulp-sass": "^3.1.0",
+        "gulp-uglifycss": "^1.0.6",
+        "gulp-autoprefixer": "^5.0.0",
+        "gulp-merge-media-queries": "^0.2.1",
+        "babel-core": "^6.26.0",
+        "babel-preset-airbnb": "^2.4.0",
+        "eslint": "^4.19.0",
+        "eslint-plugin-react": "^7.7.0",
+        "eslint-plugin-jsx-a11y": "^6.0.3",
+        "eslint-plugin-import": "^2.9.0",
+        "eslint-config-airbnb": "^16.1.0",
+        "gulp-babel": "^7.0.1",
+        "gulp-concat": "^2.6.1",
+        "gulp-uglify": "^3.0.0",
+        "gulp-rename": "^1.2.0",
+        "gulp-line-ending-corrector": "^1.0.1",
+        "gulp-filter": "^5.1.0",
+        "gulp-sourcemaps": "^2.6.4",
+        "gulp-notify": "^3.0.0",
+        "browser-sync": "^2.23.6",
+        "gulp-remember": "^1.0.1",
+        "gulp-plumber": "^1.2.0"
+    }
+}

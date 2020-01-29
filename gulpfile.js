@@ -20,23 +20,30 @@ const gulp = require('gulp'); // Gulp
 const sass = require('gulp-sass'); // Gulp-Sass
 const minifycss = require('gulp-uglifycss'); // Minifies CSS.
 const autoprefixer = require('gulp-autoprefixer'); // Automatic CSS prefixes.
-const mmq = require('gulp-merge-media-queries'); // Combine matching media queries into one media query definition.
+const mmq = require(
+'gulp-merge-media-queries'); // Combine matching media queries into one media query definition.
 
 /* Plugins > JS */
 const concat = require('gulp-concat'); // Concatenates JS files.
 const uglify = require('gulp-uglify'); // Minifies JS files.
-const babel = require('gulp-babel'); // Compiles ESNext to browser compatible JS.
+const babel = require(
+'gulp-babel'); // Compiles ESNext to browser compatible JS.
 
 /* Plugins > Utilities */
 const rename = require('gulp-rename'); // Renames files.
-const lineec = require('gulp-line-ending-corrector'); // Consistent Line Endings for non UNIX systems. Gulp Plugin for Line Ending Corrector (A utility that makes sure your files have consistent line endings).
-const filter = require('gulp-filter'); // Enables you to work on a subset of the original files by filtering them using globbing.
-const sourcemaps = require('gulp-sourcemaps'); // Maps code in a compressed file (E.g. style.css) back to it’s original position in a source file (E.g. structure.scss, which was later combined with other css files to generate style.css)
+const lineec = require(
+'gulp-line-ending-corrector'); // Consistent Line Endings for non UNIX systems. Gulp Plugin for Line Ending Corrector (A utility that makes sure your files have consistent line endings).
+const filter = require(
+'gulp-filter'); // Enables you to work on a subset of the original files by filtering them using globbing.
+const sourcemaps = require(
+'gulp-sourcemaps'); // Maps code in a compressed file (E.g. style.css) back to it’s original position in a source file (E.g. structure.scss, which was later combined with other css files to generate style.css)
 const notify = require('gulp-notify'); // Sends message notification to you
 const browserSync = require('browser-sync')
     .create(); // Reloads browser and injects CSS. Time-saving synchronised browser testing.
-const remember = require('gulp-remember'); //  Adds all the files it has ever seen back into the stream
-const plumber = require('gulp-plumber'); // Prevent pipe breaking caused by errors from gulp plugins
+const remember = require(
+'gulp-remember'); //  Adds all the files it has ever seen back into the stream
+const plumber = require(
+'gulp-plumber'); // Prevent pipe breaking caused by errors from gulp plugins
 
 /**
  * Task: `browser-sync`.
@@ -94,14 +101,16 @@ gulp.task('styles', () => gulp
     .pipe(lineec()) // Consistent Line Endings for non UNIX systems.
     .pipe(gulp.dest(config.cssBuildDirectory))
     .pipe(filter('**/*.css')) // Filtering stream to only css files
-    .pipe(mmq({ log: true })) // Merge Media Queries only for .min.css version.
+    .pipe(
+mmq({ log: true })) // Merge Media Queries only for .min.css version.
     .pipe(browserSync.stream()) // Reloads style.css if that is enqueued.
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss({ maxLineLen: 10 }))
     .pipe(lineec()) // Consistent Line Endings for non UNIX systems.
     .pipe(gulp.dest(config.cssBuildDirectory))
     .pipe(filter('**/*.css')) // Filtering stream to only css files
-    .pipe(browserSync.stream()) // Reloads style.min.css if that is enqueued.
+    .pipe(browserSync
+.stream()) // Reloads style.min.css if that is enqueued.
     .pipe(notify({
         message: 'TASK: "styles" Completed! 💯',
         onLast: true,
@@ -117,32 +126,14 @@ gulp.task('styles-dist', () => gulp
     .on('error', sass.logError)
     .pipe(autoprefixer(config.BROWSERS_LIST))
     .pipe(filter('**/*.css')) // Filtering stream to only css files
-    .pipe(mmq({ log: true })) // Merge Media Queries only for .min.css version.
+    .pipe(
+mmq({ log: true })) // Merge Media Queries only for .min.css version.
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())
     .pipe(lineec()) // Consistent Line Endings for non UNIX systems.
     .pipe(gulp.dest(config.cssDistDirectory))
     .pipe(notify({
         message: 'TASK: "styles-dist" Completed! 💯',
-        onLast: true,
-    })));
-
-/**
- * Task: `vendorsJS`.
- */
-gulp.task('vendorsJS', () => gulp
-    .src(config.jsVendorSRC)
-    .pipe(gulp.dest(config.jsBuildDirectory))
-    .pipe(notify({
-        message: 'TASK: "vendorsJS" Completed! 💯',
-        onLast: true,
-    })));
-
-gulp.task('vendorsJS-dist', () => gulp
-    .src(config.jsVendorSRC)
-    .pipe(gulp.dest(config.jsDistDirectory))
-    .pipe(notify({
-        message: 'TASK: "vendorsJS-dist" Completed! 💯',
         onLast: true,
     })));
 
@@ -158,7 +149,8 @@ gulp.task('vendorsJS-dist', () => gulp
  *     4. Uglifes/Minifies the JS file and generates custom.min.js
  */
 gulp.task('customJS', () => gulp
-    .src(config.jsSRC, { since: gulp.lastRun('customJS') }) // Only run on changed files.
+    .src(config.jsSRC, { since: gulp.lastRun(
+        'customJS') }) // Only run on changed files.
     .pipe(plumber({
         errorHandler: (err) => {
             notify.onError('Error: <%= error.message %>')(err);
@@ -170,7 +162,8 @@ gulp.task('customJS', () => gulp
             [
                 'airbnb', // Preset which compiles ES6 to ES5.
                 {
-                    targets: { browsers: config.BROWSERS_LIST }, // Target browser list to support.
+                    targets: { browsers: config
+                        .BROWSERS_LIST }, // Target browser list to support.
                 },
             ],
         ],
@@ -192,7 +185,8 @@ gulp.task('customJS', () => gulp
     })));
 
 gulp.task('customJS-dist', () => gulp
-    .src(config.jsSRC, { since: gulp.lastRun('customJS-dist') }) // Only run on changed files.
+    .src(config.jsSRC, { since: gulp.lastRun(
+        'customJS-dist') }) // Only run on changed files.
     .pipe(plumber({
         errorHandler: (err) => {
             notify.onError('Error: <%= error.message %>')(err);
@@ -204,7 +198,8 @@ gulp.task('customJS-dist', () => gulp
             [
                 'airbnb', // Preset which compiles ES6 to ES5.
                 {
-                    targets: { browsers: config.BROWSERS_LIST }, // Target browser list to support.
+                    targets: { browsers: config
+                        .BROWSERS_LIST }, // Target browser list to support.
                 },
             ],
         ],
@@ -272,13 +267,13 @@ gulp.task(
     'default',
     gulp.parallel(
         'styles',
-        'vendorsJS',
         'customJS',
         'html',
         browsersync,
         () => {
             gulp.watch(config.styleWatchFiles, gulp.parallel('styles'));
-            gulp.watch(config.jsWatchFiles, gulp.series('customJS', reload));
+            gulp.watch(config.jsWatchFiles, gulp.series('customJS',
+            reload));
             gulp.watch(config.htmlWatchFiles, gulp.series('html'));
         },
     ),
@@ -294,7 +289,6 @@ gulp.task(
     'dist',
     gulp.parallel(
         'styles-dist',
-        'vendorsJS-dist',
         'customJS-dist',
         'html-dist',
     ),

@@ -1,3 +1,5 @@
-# css-grid-prototype
+# CSS Grid Prototype
 
-CSS grid prototype/boilerplate page for redditor u/carpii.
+Just a basic CSS grid prototype page.
+
+Clone the repo and run `gulp` for development, and `gulp` for distribution file generation.

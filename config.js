@@ -42,11 +42,6 @@ module.exports = {
         'ie >= 10',
     ],
 
-    // JS - Vendor Options
-    jsVendorSRC: [
-        './node_modules/jquery/dist/jquery.min.js',
-    ], // Paths to vendor JS files. Can be array or string.
-
     // JS - Project Options
     jsSRC: `./${sourceDirectoryName}/assets/js/*.js`, // Path to JS custom scripts folder.
     jsFileName: 'main', // Compiled JS custom file name.

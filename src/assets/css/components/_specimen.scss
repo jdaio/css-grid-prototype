@@ -47,11 +47,11 @@ $color-light-alt: #F2F1EF;
 
 body {
     color: $color-primary;
+    cursor: auto;
     font-family: $font-family;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    cursor: auto;
 }
 
 /*-- Base > Typography --*/
@@ -59,11 +59,11 @@ body {
 h1,
 h2,
 h3 {
-    margin-top: 0;
-    margin-bottom: .75rem;
+    color: $color-tertiary;
     font-weight: 700;
     line-height: 1.75;
-    color: $color-tertiary;
+    margin-bottom: .75rem;
+    margin-top: 0;
 }
 
 h1 {
@@ -86,15 +86,15 @@ p {
 }
 
 a {
+    border-bottom: .0625rem solid $color-secondary;
     color: $color-secondary;
     text-decoration: none;
-    border-bottom: .0625rem solid $color-secondary;
     transition: all .3s;
 
     &:hover,
     &:focus {
-        color: lighten($color-secondary, 10%);
         border-bottom-color: currentColor;
+        color: lighten($color-secondary, 10%);
     }
 }
 
@@ -104,9 +104,9 @@ a {
 
 .header,
 .footer {
-    padding: 1.5rem 1rem;
     background: $color-primary;
     color: $color-light;
+    padding: 1.5rem 1rem;
     text-align: center;
 }
 
@@ -114,8 +114,8 @@ a {
     font-weight: 700;
 
     h1 {
-        margin: 0 0 1rem;
         color: $color-light;
+        margin: 0 0 1rem;
     }
 }
 
@@ -149,9 +149,9 @@ a {
     background: $color-light-alt;
 
     nav {
+        display: block;
         margin: 0;
         padding: 0;
-        display: block;
 
         ul {
             list-style: none;
@@ -176,14 +176,14 @@ a {
     background: $color-light;
 
     img {
-        display: inline-block;
-        margin: 0 1.5rem 1.5rem 0;
-        max-width: calc(50% - 1rem);
-        width: calc(50% - 1rem);
-        height: auto;
-        padding: .25rem;
         border: .0625rem solid lighten($color-primary, 50%);
         border-radius: 1rem;
+        display: inline-block;
+        height: auto;
+        margin: 0 1.5rem 1.5rem 0;
+        max-width: calc(50% - 1rem);
+        padding: .25rem;
+        width: calc(50% - 1rem);
 
         &:nth-of-type(even) {
             margin-right: 0;
@@ -209,14 +209,14 @@ a {
 /*-- Sidebars > Mobile Sidebar > Toggle --*/
 
 .sidebar--mobile-toggle {
-    margin: 0 auto;
-    padding: .25rem;
     background: rgba($color-light, 0);
-    outline: none;
     border: 0;
     border-radius: .25rem;
     color: $color-light;
     cursor: pointer;
+    margin: 0 auto;
+    outline: none;
+    padding: .25rem;
     transition: all .3s;
 
     &:hover {

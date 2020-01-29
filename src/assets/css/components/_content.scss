@@ -10,8 +10,8 @@
 
 .header,
 .footer {
-    width: 100%;
     height: auto;
+    width: 100%;
 }
 
 .header__inner,
@@ -30,8 +30,8 @@
 \*------------------------------------*/
 
 .content {
-    width: 100%;
     height: auto;
+    width: 100%;
 }
 
 
@@ -48,10 +48,10 @@
     grid-row: 1 / 2;
 
     @include bp-md {
-        height: 100%;
         -ms-grid-column: 2;
         -ms-grid-column-span: 1;
         grid-column: main-content-start / main-content-end;
+        height: 100%;
     }
 }
 
@@ -104,14 +104,14 @@
 
 .sidebar--mobile {
     display: none;
-    z-index: 100;
     position: absolute;
+    z-index: 100;
 
     @include bp-md {
         display: block;
-        z-index: auto;
         max-width: none;
         position: static;
+        z-index: auto;
     }
 }
 
@@ -142,9 +142,10 @@
 }
 
 .sidebar--mobile-toggle__icon {
-    width: 2.5rem;
     height: 2.5rem;
+    width: 2.5rem;
     /* fill: color here; */
+
     &:hover,
     &:focus {
         /* fill: color here; */

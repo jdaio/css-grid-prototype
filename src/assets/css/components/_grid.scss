@@ -10,15 +10,15 @@
 \*------------------------------------*/
 
 .grid-container {
+    align-content: start;
+    align-items: start;
     display: -ms-grid;
     display: grid;
+    grid-auto-rows: auto;
     -ms-grid-columns: calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12) calc(100% / 12);
     grid-template-columns: [col-start col] repeat(11, calc(100% / 12) [col]) calc(100% / 12) [col col-end];
     -ms-grid-rows: auto auto;
     grid-template-rows: auto;
-    grid-auto-rows: auto;
-    align-items: start;
-    align-content: start;
     position: relative;
 }
 

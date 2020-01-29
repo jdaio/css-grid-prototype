@@ -8,7 +8,7 @@
         "url": "https://github.com/jdaio/css-grid-prototype"
     },
     "dependencies": {
-        "jquery": "^3.3.1"
+        "jquery": "^3.4.0"
     },
     "devDependencies": {
         "gulp": "github:gulpjs/gulp#4.0",
